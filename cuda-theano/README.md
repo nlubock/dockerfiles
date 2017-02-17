@@ -1,5 +1,5 @@
-[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-theano.svg)](https://hub.docker.com/r/kaixhin/cuda-theano/)
-[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-theano.svg)](https://hub.docker.com/r/kaixhin/cuda-theano/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-theano.svg)](https://hub.docker.com/r/nlubock/cuda-theano/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-theano.svg)](https://hub.docker.com/r/nlubock/cuda-theano/)
 
 cuda-theano
 ===========
@@ -12,7 +12,7 @@ Requirements
 
 Usage
 -----
-Use NVIDIA Docker: ``nvidia-docker run -it kaixhin/cuda-theano``.
+Use NVIDIA Docker: ``nvidia-docker run -it nlubock/cuda-theano``.
 
 For more information on CUDA on Docker, see the [repo readme](https://github.com/Kaixhin/dockerfiles#cuda).
 

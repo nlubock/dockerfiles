@@ -3,32 +3,9 @@
 dockerfiles
 ===========
 
-Compilation of Dockerfiles with automated builds enabled on the [Docker Hub](https://hub.docker.com/u/kaixhin/). **Not suitable for production environments.** These images are under continuous development, so breaking changes may be introduced.
+Compilation of Dockerfiles with automated builds enabled on the [Docker Hub](https://hub.docker.com/u/nlubock/). **Not suitable for production environments.** These images are under continuous development, so breaking changes may be introduced.
 
-Nearly all images are based on Ubuntu Core 14.04 LTS, built with minimising size/layers and [best practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/) in mind. Dependencies are indicated left to right e.g. cuda-vnc is VNC built on top of CUDA. Explicit dependencies are excluded.
-
-Changes from Master
--------------------
-- Cuda8.0 / Cudnn5 / Theano now run Ubuntu 16.04
-- Cuda8.0 / Cudnn5 / Keras now run Ubuntu 16.04
-
-
-Up-to-date builds
------------------
-
-Some builds based on certain software have builds that are triggered on schedule via a cron script to stay up to date on a weekly basis. These are:
-
-- [Brainstorm](https://github.com/IDSIA/brainstorm)
-- [Caffe](https://github.com/BVLC/caffe)
-- [DIGITS](https://github.com/NVIDIA/DIGITS)
-- [FGLab](https://github.com/Kaixhin/FGLab)/[FGMachine](https://github.com/Kaixhin/FGMachine)
-- [Keras](https://github.com/fchollet/keras)
-- [Lasagne](https://github.com/Lasagne/Lasagne)
-- [MXNet](https://github.com/dmlc/mxnet)
-- [neon](https://github.com/NervanaSystems/neon)
-- [Pylearn2](https://github.com/lisa-lab/pylearn2)
-- [Theano](https://github.com/Theano/Theano)
-- [Torch](https://github.com/torch/distro)
+All images are based on Ubuntu Core 16.04 LTS, built with minimising size/layers and [best practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/) in mind. Dependencies are indicated left to right e.g. cuda-theano is theano built on top of CUDA. Explicit dependencies are excluded.
 
 Graphical applications
 ----------------------
@@ -75,43 +52,11 @@ To start containers on the host from within a docker container, the container re
 CUDA
 ----
 
-Many images rely on [CUDA](http://www.nvidia.com/object/cuda_home_new.html). These images are versioned with the corresponding tags, e.g. "8.0", "7.5", "7.0" and "6.5", on the Docker Hub.
+All images pull the most recent versions of [CUDA](http://www.nvidia.com/object/cuda_home_new.html) and [cuDNN](https://developer.nvidia.com/cudnn) from [NVIDIA's DockerHub](https://hub.docker.com/r/nvidia/cuda/)
 
 These images need to be run on an Ubuntu host OS with [NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) installed. The driver requirements can be found on the [NVIDIA Docker wiki](https://github.com/NVIDIA/nvidia-docker/wiki/CUDA#requirements).
-
-Deprecated images
------------------
-
-`kaixhin/cuda` and `kaixhin/cudnn` have now been **deprecated** in favour of the official solution ([`nvidia/cuda`](https://hub.docker.com/r/nvidia/cuda/)).
-
-Migration
----------
-
-In the future it will hopefully be possible to checkpoint and restore Docker containers easily using [CRIU](http://criu.org/Docker). This would alleviate some issues, such as the inability to restart a VNC image successfully.
-
-Automated Builds
-----------------
-
-[Automated Builds](https://docs.docker.com/docker-hub/builds/) on the Docker Hub have several advantages, including reproducibility and security. However the build cluster has the following limits for Automated Builds:
-
-- 2 hours
-- 1 CPU
-- 2 GB RAM
-- 512 MB swap
-- 30 GB disk space
-
-The main tip for keeping within the CPU and memory limits is to reduce parallelism/forking processes. Due to their logging system, redirecting stdout/stderr to /dev/null can potentially save a reasonable amount of memory.
 
 Acknowledgements
 ----------------
 
-Some Dockerfiles have been modified from the work of others. The source for these are:
-
-- [CUDA](https://github.com/tleyden/docker)
-- [Samba](https://github.com/dperson/samba)
-- [VNC](https://github.com/dockerfile/ubuntu-desktop)
-
-Citation
---------
-
-If you find this useful in research please consider [citing this work](CITATION.md).
+These Dockerfiles have been modified from [Kaixhin](https://github.com/Kaixhin) source for the original repo is [here](https://github.com/Kaixhin/dockerfiles).

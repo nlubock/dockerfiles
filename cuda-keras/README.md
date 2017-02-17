@@ -1,5 +1,5 @@
-[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-keras.svg)](https://hub.docker.com/r/kaixhin/cuda-keras/)
-[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-keras.svg)](https://hub.docker.com/r/kaixhin/cuda-keras/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kaixhin/cuda-keras.svg)](https://hub.docker.com/r/nlubock/cuda-keras/)
+[![Docker Stars](https://img.shields.io/docker/stars/kaixhin/cuda-keras.svg)](https://hub.docker.com/r/nlubock/cuda-keras/)
 
 cuda-keras
 ==========

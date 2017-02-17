@@ -1,6 +1,5 @@
 # Start with CUDA Theano base image
-FROM kaixhin/cuda-theano:8.0
-MAINTAINER Kai Arulkumaran <design@kaixhin.com>
+FROM nlubock/cuda-theano
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
@@ -15,3 +14,10 @@ RUN pip install --upgrade six
 RUN cd /root && git clone https://github.com/fchollet/keras.git && cd keras && \
   # Install
   python setup.py install
+
+# set up keras to use theano backend
+RUN mkdir /root/.keras && \
+   echo -e "{\n\t\"image_dim_ordering\": \"th\",\n\t\"epsilon\": 1e-07,\n\t\"floatx\": \"float32\",\n\t\"backend\": \"theano\"\n}" > /root/.keras/keras.json
+
+# Set WD to home
+WORKDIR /root
