@@ -15,6 +15,3 @@ RUN pip install --upgrade six
 RUN cd /root && git clone https://github.com/fchollet/keras.git && cd keras && \
   # Install
   python setup.py install
-
-# Set ~/keras as working directory
-WORKDIR /root/keras

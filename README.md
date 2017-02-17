@@ -7,6 +7,12 @@ Compilation of Dockerfiles with automated builds enabled on the [Docker Hub](htt
 
 Nearly all images are based on Ubuntu Core 14.04 LTS, built with minimising size/layers and [best practices](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/) in mind. Dependencies are indicated left to right e.g. cuda-vnc is VNC built on top of CUDA. Explicit dependencies are excluded.
 
+Changes from Master
+-------------------
+- Cuda8.0 / Cudnn5 / Theano now run Ubuntu 16.04
+- Cuda8.0 / Cudnn5 / Keras now run Ubuntu 16.04
+
+
 Up-to-date builds
 -----------------
 
