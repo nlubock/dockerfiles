@@ -17,7 +17,7 @@ RUN cd /root && git clone https://github.com/fchollet/keras.git && cd keras && \
 
 # set up keras to use theano backend
 RUN mkdir /root/.keras && \
-   echo -e "{\n\t\"image_dim_ordering\": \"th\",\n\t\"epsilon\": 1e-07,\n\t\"floatx\": \"float32\",\n\t\"backend\": \"theano\"\n}" > /root/.keras/keras.json
+   echo "{\n\t\"image_dim_ordering\": \"th\",\n\t\"epsilon\": 1e-07,\n\t\"floatx\": \"float32\",\n\t\"backend\": \"theano\"\n}" > /root/.keras/keras.json
 
 # Set WD to home
 WORKDIR /root
